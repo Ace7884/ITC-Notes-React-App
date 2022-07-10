@@ -1,9 +1,12 @@
 .Button {
+  font-size: x-small;
   display: flex;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
-  width: 90%;
-  color: grey;
+  width: 40%;
+  font: bolder;
+  color: rgb(76, 72, 72);
   border: none;
   box-shadow: var(--elementShadow);
   border-radius: var(--elementCurve);

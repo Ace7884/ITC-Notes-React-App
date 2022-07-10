@@ -10,15 +10,22 @@ export const App = () => {
   const [notelist, setNotes] = useState([]);
 
   const addNote = () => {
-    const newNote = 
-     <Note/>
-    setNotes([newNote, ...notelist]);
+    const newNote = <Note />;
+    notelist.push(newNote);
+    setNotes([...notelist]);
+  };
+
+  const deleteNote = () => {
+    if (window.confirm("Are you sure you want to delete your note?")) {
+      notelist.splice(-1);
+      setNotes([...notelist]);
+    }
   };
 
   return (
     <div className="app">
       <MainHeader title="Stickey NotesApp" />
-      <FormContainer func={addNote} />
+      <FormContainer func={addNote} func2={deleteNote} />
       <NotesContainer state={notelist} />
     </div>
   );

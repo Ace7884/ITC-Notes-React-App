@@ -1,6 +1,14 @@
-.NoteDate p {
-  font-size: xx-small;
-  font-family: "Times New Roman", Times, serif;
+@import url("https://fonts.googleapis.com/css2?family=Caveat&display=swap");
+
+.NoteDate {
+  display: inline-flex;
+  justify-content: space-between;
+}
+
+.NoteDate>span{
+  color: grey;
+  font-size: 10px;
+  font-family: "Caveat", cursive;
+  font-weight: bold;
   margin: 1px;
-  height: min-content;
 }
