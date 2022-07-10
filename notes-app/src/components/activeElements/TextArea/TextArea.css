@@ -1,0 +1,17 @@
+.TextArea {
+  width: 100%;
+  border: black solid 1px;
+  background-image: url("../../../resources/blank-digital-screen-texture-background-49960832.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: var(--elementCurve);
+}
+
+input {
+  display: flex;
+  background-color: transparent;
+  width: 90%;
+  margin: 2px;
+  border: none;
+  outline: none;
+}

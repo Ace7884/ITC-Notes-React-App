@@ -1,0 +1,11 @@
+.Note {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+  height: 130px;
+  width: 130px;
+  padding: 1px;
+  background-image: url(../../../resources/PostItTexture.jpg);
+  box-shadow: var(--elementShadow);
+  border-radius: var(--elementCurve);
+}
