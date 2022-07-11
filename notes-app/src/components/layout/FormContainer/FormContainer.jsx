@@ -1,13 +1,13 @@
 import React from "react";
+import { Button } from "../../activeElements/Button/Button";
 import { TextArea } from "../../activeElements/TextArea/TextArea";
-import { ButtonContainer } from "../ButtonContainer/ButtonContainer";
 import "../FormContainer/FormContainer.css";
 
-export const FormContainer = ({func,func2}) => {
+export const FormContainer = ({func}) => {
   return (
     <div className="FormContainer">
-      <TextArea />
-      <ButtonContainer func={func} func2={func2}/>
+      <TextArea/>
+      <Button func={func} text='Add Note'/>
     </div>
   );
 };

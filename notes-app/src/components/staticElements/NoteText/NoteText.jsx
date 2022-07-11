@@ -1,8 +1,9 @@
 import React from "react";
-
 import "../NoteText/NoteText.css";
-//Debug later Text Overflow
+//Text OverFlows container Debug later
+
 export const NoteText = ({ text }) => {
+ 
   return (
     <div className="NoteText">
       <p>{text}</p>

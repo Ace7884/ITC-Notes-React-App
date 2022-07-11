@@ -1,0 +1,12 @@
+.DeleteIcon{
+  display: inline-flex;
+  justify-content: flex-end;
+  color: rgb(165, 12, 12);
+  width: 100%;
+  height: 10px;
+  
+}
+
+.DeleteIcon :hover{
+  cursor:pointer
+}

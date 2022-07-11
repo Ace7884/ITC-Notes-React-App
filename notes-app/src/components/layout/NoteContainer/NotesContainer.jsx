@@ -1,15 +1,17 @@
 import React from "react";
-// import { v4 as uuid } from 'uuid';
 import { Note } from "../../staticElements/Note/Note";
 import "../NoteContainer/NotesContainer.css";
-//debug key error later
 
-export const NotesContainer = ({ state }) => {
+export const NotesContainer = ({state}) => {
+  const title = [];
+  state.forEach((note , index) => {
+    title.push(`Note Title ${index}`);
+  });
+
   return (
     <div className="NotesContainer">
-      {state.map((note) => {
-        /* return <Note key={uuid()}/> */
-        return <Note />;
+      {state.map((noteitem,index) => {
+        return <Note key={noteitem.key} id={noteitem.id} title={title[index]} text='Example Note' func={noteitem.func}/> ;
       })}
       ;
     </div>

@@ -13,6 +13,7 @@
 }
 
 .Button:hover {
+  cursor:pointer;
   transition: all 300ms ease-in;
   color: white;
   background-color: grey;

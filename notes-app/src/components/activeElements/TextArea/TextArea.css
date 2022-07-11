@@ -15,3 +15,7 @@ input {
   border: none;
   outline: none;
 }
+
+input:hover{
+  cursor:pointer;
+}
