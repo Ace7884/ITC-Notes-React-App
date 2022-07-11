@@ -3,21 +3,19 @@ import { useState } from "react";
 import { MainHeader } from "./components/staticElements/MainHeader/MainHeader";
 import { FormContainer } from "./components/layout/FormContainer/FormContainer";
 import { NotesContainer } from "./components/layout/NoteContainer/NotesContainer";
+// import Modal from "./components/activeElements/Modal/Modal";
 import { v4 as uuid } from "uuid";
-
 import "./App.css";
 
 export const App = () => {
   const [notelist, setNotes] = useState([]);
+  // const [ismodalOpen, setIsModalOpen] = useState(false);
 
-  //Feature incomplete pending completion
-  const deleteNote = (e) => {
-    // if (window.confirm("Are you sure you want to delete your note?")) {
-    //  setNotes(notelist.filter((note) => note.id !== e.currentTarget.id));
-    // notelist.splice(notelist.indexOf(notelist), 1);
-    // setNotes([...notelist]);
-    // let newNoteList = notelist.filter((note, index) => index !== note);
-    // setNotes(newNoteList);
+  const deleteNote = (id) => {
+    if (window.confirm("Are you sure you want to delete your note?")) {
+      let removeNotesList = notelist.filter((note) => note.id !== id);
+      setNotes(removeNotesList);
+    }
   };
 
   const addNote = () => {
@@ -25,7 +23,6 @@ export const App = () => {
     const newNote = {
       id,
       key: id,
-      func:deleteNote,
     };
 
     notelist.push(newNote);
@@ -36,9 +33,12 @@ export const App = () => {
     <div className="app">
       <MainHeader title="Stickey NotesApp" />
       <FormContainer func={addNote} />
-      <NotesContainer state={notelist} func={deleteNote} />
+      <NotesContainer state={notelist} deleteNote={deleteNote} />
+      {/* {ismodalOpen && <Modal setIsModalOpen={setIsModalOpen} />} */}
     </div>
   );
 };
 
 export default App;
+
+// toggleModal={setIsModalOpen}

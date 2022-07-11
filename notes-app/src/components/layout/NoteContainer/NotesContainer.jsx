@@ -2,16 +2,13 @@ import React from "react";
 import { Note } from "../../staticElements/Note/Note";
 import "../NoteContainer/NotesContainer.css";
 
-export const NotesContainer = ({state}) => {
-  const title = [];
-  state.forEach((note , index) => {
-    title.push(`Note Title ${index}`);
-  });
-
+export const NotesContainer = ({state, deleteNote,toggleModal}) => {
+  
   return (
     <div className="NotesContainer">
       {state.map((noteitem,index) => {
-        return <Note key={noteitem.key} id={noteitem.id} title={title[index]} text='Example Note' func={noteitem.func}/> ;
+        console.log(noteitem);
+        return <Note key={noteitem.key} id={noteitem.id} titleNum={index+1} text='Example Note'   deleteNote={deleteNote} toggleModal={toggleModal} /> ;
       })}
       ;
     </div>

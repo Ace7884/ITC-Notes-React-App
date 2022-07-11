@@ -9,3 +9,7 @@
   box-shadow: var(--elementShadow);
   border-radius: var(--elementCurve);
 }
+
+.modalClickableArea {
+  height: 100%;
+}

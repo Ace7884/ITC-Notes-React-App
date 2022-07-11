@@ -1,10 +1,10 @@
 import React from "react";
 import "../NoteTitle/NoteTitle.css";
 
-export const NoteTitle = ({title}) => {
+export const NoteTitle = ({ titleText }) => {
   return (
     <div className="NoteTitle">
-      <h3>{title}</h3>
+      <h3>{titleText}</h3>
     </div>
   );
 };

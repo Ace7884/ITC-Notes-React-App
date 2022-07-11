@@ -5,13 +5,18 @@ import { NoteDate } from "../../layout/NoteContainer/NoteDate/NoteDate";
 import { DeleteIcon } from "../../activeElements/DeleteIcon/DeleteIcon";
 import "../Note/Note.css";
 
-export const Note = ({text,title,id,func}) => {
+export const Note = ({text,id,deleteNote,toggleModal}) => {
   return (
     <div className="Note">
-      <DeleteIcon func={func} id={id}/>
-      <NoteDate />
-      <NoteTitle title={title}/>
-      <NoteText text={text} />
-    </div>
+      <DeleteIcon key={id} id={id} deleteNote={deleteNote}/>
+      {/* <div className="modalClickableArea"  > */}
+        <NoteDate/>
+        <NoteTitle title='Note Title'/>
+        <NoteText text={text}/>
+      </div>
+    // </div>
   );
 };
+
+
+// onClick={toggleModal}
