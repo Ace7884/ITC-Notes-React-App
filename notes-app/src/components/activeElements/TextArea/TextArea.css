@@ -7,9 +7,14 @@
   border-radius: var(--elementCurve);
 }
 
-textarea {
+.TextArea>textarea {
   display: flex;
+  height: 95%;
+  width: 100%;
   background-color: transparent;
+  resize: none; 
+  overflow:hidden;
+
 }
 
 input {
@@ -18,12 +23,12 @@ input {
   background-color: transparent;
 }
 
-textarea,
+.TextArea>textarea,
 input {
   color: #757575;
   border: none;
-  margin: 0 2px;
-  width: 90%;
+  margin: 0 1px;
+  width: 95%;
   outline: none;
 }
 

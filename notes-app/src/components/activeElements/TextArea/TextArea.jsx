@@ -19,12 +19,12 @@ export const TextArea = ({
       <input
         value={noteTitleState}
         onChange={updateTitle}
-        placeholder="Title here.."
+        placeholder="Your Title here..."
       ></input>
       <textarea
         value={noteTextState}
         onChange={updateNoteText}
-        placeholder="Your Note Here.."
+        placeholder="Your Note Here..."
       ></textarea>
     </div>
   );
