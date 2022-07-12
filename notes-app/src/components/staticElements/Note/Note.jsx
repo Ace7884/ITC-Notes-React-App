@@ -1,22 +1,26 @@
 import React from "react";
-import { NoteText } from "../NoteText/NoteText";
-import { NoteTitle } from "../NoteTitle/NoteTitle";
-import { NoteDate } from "../../layout/NoteContainer/NoteDate/NoteDate";
-import { DeleteIcon } from "../../activeElements/DeleteIcon/DeleteIcon";
+import { WrapperBetween } from "../../layout/wrapperBetween/WrapperBetween";
 import "../Note/Note.css";
+import { ModalClickableArea } from "../../layout/ModalClickableArea/ModalClickableArea";
 
-export const Note = ({text,id,deleteNote,toggleModal}) => {
+export const Note = ({
+  text,
+  title,
+  id,
+  deleteNote,
+  toggleModal,
+  hour,
+  date,
+}) => {
   return (
     <div className="Note">
-      <DeleteIcon key={id} id={id} deleteNote={deleteNote}/>
-      {/* <div className="modalClickableArea"  > */}
-        <NoteDate/>
-        <NoteTitle title='Note Title'/>
-        <NoteText text={text}/>
-      </div>
-    // </div>
+      <WrapperBetween deleteNote={deleteNote} hour={hour} date={date} id={id} />
+      <ModalClickableArea
+        text={text}
+        title={title}
+        id={id}
+        toggleModal={toggleModal}
+      />
+    </div>
   );
 };
-
-
-// onClick={toggleModal}

@@ -1,10 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Caveat&display=swap");
 /* Debug later text overflow */
 
-.NoteText p {
+.NoteText {
+  display: flex;
+  
+  height: 6px;
+}
+
+.NoteText>p{
   color: rgb(224, 29, 29);
   font-family: "Caveat", cursive;
   font-size: small;
-  margin: 0 1px;
-  width: 100%;
+  margin:1px;
 }

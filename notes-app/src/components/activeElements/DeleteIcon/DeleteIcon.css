@@ -1,11 +1,11 @@
-.DeleteIcon{
+.DeleteIcon {
   display: inline-flex;
   justify-content: flex-end;
   color: rgb(165, 12, 12);
-  width: 100%;
-  height: fit-content;
+  width: min-content;
+  height: min-content;
 }
 
-.DeleteIcon :hover{
-  cursor:pointer
+.DeleteIcon :hover {
+  cursor: pointer;
 }

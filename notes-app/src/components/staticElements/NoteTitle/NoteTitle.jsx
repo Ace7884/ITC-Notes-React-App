@@ -1,10 +1,10 @@
 import React from "react";
 import "../NoteTitle/NoteTitle.css";
-
-export const NoteTitle = ({ titleText }) => {
+//Text OverFlow container Debug pending
+export const NoteTitle = ({ title }) => {
   return (
     <div className="NoteTitle">
-      <h3>{titleText}</h3>
+      <h4>{title}</h4>
     </div>
   );
 };

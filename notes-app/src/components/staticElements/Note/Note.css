@@ -2,8 +2,8 @@
   display: flex;
   flex-direction: column;
   margin: 10px;
-  height: 130px;
-  width: 130px;
+  height: 30vh;
+  width: 17.84vw;
   padding: 1px;
   background-image: url(../../../resources/PostItTexture.jpg);
   box-shadow: var(--elementShadow);

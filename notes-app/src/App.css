@@ -8,15 +8,29 @@ body,
 }
 
 #root {
-  padding: 5vh;
+  padding: 1vh;
   background-image: url("./resources/hd-wallpaper-72250.jpg");
   background-repeat: repeat;
   background-position: center;
   background-size: cover;
   overflow-y: scroll;
 }
+
 #root::-webkit-scrollbar {
   position: absolute;
+  width: 10px;
+}
+
+#root::-webkit-scrollbar-track {
+  width: 20px;
+
+  background-color: transparent;
+}
+
+#root::-webkit-scrollbar-thumb {
+  border-radius: var(--elementCurve);
+  background-color: rgb(255, 255, 255);
+  box-shadow: 1px 1px 1px 1px rgb(0, 0, 0);
 }
 
 .app {
