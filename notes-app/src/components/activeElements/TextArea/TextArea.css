@@ -1,21 +1,33 @@
 .TextArea {
   width: 100%;
   border: black solid 1px;
-  background-image: url("../../../resources/blank-digital-screen-texture-background-49960832.jpg");
+  background-image: url("../../../resources/ScreenTexture.png");
   background-repeat: no-repeat;
   background-size: cover;
   border-radius: var(--elementCurve);
 }
 
-input {
+textarea {
   display: flex;
   background-color: transparent;
-  width: 90%;
-  margin: 2px;
+}
+
+input {
   border: none;
+  font-weight: bold;
+  background-color: transparent;
+}
+
+textarea,
+input {
+  color: #757575;
+  border: none;
+  margin: 0 2px;
+  width: 90%;
   outline: none;
 }
 
-input:hover{
-  cursor:pointer;
+textarea:hover,
+input:hover {
+  cursor: pointer;
 }

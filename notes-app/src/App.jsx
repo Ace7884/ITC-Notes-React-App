@@ -8,14 +8,17 @@ import { v4 as uuid } from "uuid";
 import "./App.css";
 
 export const App = () => {
-  const [notelist, setNotes] = useState([]);
+  const [noteList, setNotes] = useState([]);
 
   const deleteNote = (id) => {
     if (window.confirm("Are you sure you want to delete your note?")) {
-      let removeNotesList = notelist.filter((note) => note.id !== id);
+      let removeNotesList = noteList.filter((note) => note.id !== id);
       setNotes(removeNotesList);
     }
   };
+
+  const [noteTitle, setTitle] = useState("");
+  const [noteText, setNoteText] = useState("");
 
   const addNote = () => {
     let id = uuid();
@@ -27,19 +30,19 @@ export const App = () => {
       key: id,
       hour,
       date,
-      title: "Note Title",
-      text: "Note Example",
+      title: noteTitle,
+      text: noteText,
     };
 
-    notelist.push(newNote);
-    setNotes([...notelist]);
+    let newNoteList = noteList.concat(newNote);
+    setNotes(newNoteList);
   };
 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalData, setModalData] = useState([]);
 
   const toggleModal = (noteId) => {
-    let targetNote = notelist.filter((note) => note.id === noteId);
+    let targetNote = noteList.filter((note) => note.id === noteId);
     setModalData([targetNote[0], ...modalData]);
     setIsModalOpen(true);
   };
@@ -47,10 +50,16 @@ export const App = () => {
   return (
     <div className="app">
       <MainHeader title="Stickey NotesApp" />
-      <FormContainer func={addNote} />
+      <FormContainer
+        noteTitleState={noteTitle}
+        noteTextState={noteText}
+        setNoteTitleFunc={setTitle}
+        setNoteTextFunc={setNoteText}
+        func={addNote}
+      />
       <NotesContainer
         toggleModal={toggleModal}
-        state={notelist}
+        state={noteList}
         deleteNote={deleteNote}
       />
       {isModalOpen && (

@@ -3,11 +3,22 @@ import { Button } from "../../activeElements/Button/Button";
 import { TextArea } from "../../activeElements/TextArea/TextArea";
 import "../FormContainer/FormContainer.css";
 
-export const FormContainer = ({func}) => {
+export const FormContainer = ({
+  func,
+  noteTitleState,
+  noteTextState,
+  setNoteTitleFunc,
+  setNoteTextFunc,
+}) => {
   return (
     <div className="FormContainer">
-      <TextArea/>
-      <Button func={func} text='Add Note'/>
+      <TextArea
+        noteTitleState={noteTitleState}
+        noteTextState={noteTextState}
+        setTitle={setNoteTitleFunc}
+        setNoteText={setNoteTextFunc}
+      />
+      <Button func={func} noteTextState={noteTextState} text="Add Note" />
     </div>
   );
 };
