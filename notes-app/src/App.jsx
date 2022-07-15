@@ -36,6 +36,8 @@ export const App = () => {
 
     let newNoteList = noteList.concat(newNote);
     setNotes(newNoteList);
+    setTitle("");
+    setNoteText("");
   };
 
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -53,20 +55,21 @@ export const App = () => {
       <FormContainer
         noteTitleState={noteTitle}
         noteTextState={noteText}
-        setNoteTitleFunc={setTitle}
-        setNoteTextFunc={setNoteText}
-        func={addNote}
+        setTitle={setTitle}
+        setNoteText={setNoteText}
+        addNote={addNote}
       />
       <NotesContainer
-        toggleModal={toggleModal}
-        state={noteList}
+        noteList={noteList}
         deleteNote={deleteNote}
+        toggleModal={toggleModal}
+        isModalOpen={isModalOpen}
       />
       {isModalOpen && (
         <Modal
-          state={isModalOpen}
           information={modalData[0]}
-          modalStatus={setIsModalOpen}
+          setIsModalOpen={setIsModalOpen}
+          isModalOpen={isModalOpen}
         />
       )}
     </div>
@@ -74,3 +77,8 @@ export const App = () => {
 };
 
 export default App;
+
+export const extendTextArea = (event) => {
+  event.target.style.height = "inherit";
+  event.target.style.height = `${event.target.scrollHeight}px`;
+};

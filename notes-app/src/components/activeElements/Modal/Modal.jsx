@@ -2,13 +2,13 @@ import React from "react";
 import { Note } from "../../staticElements/Note/Note";
 import "./Modal.css";
 
-export let Modal = ({ information, modalStatus }) => {
+export let Modal = ({ information, setIsModalOpen, isModalOpen }) => {
   return (
     <div
       className="modalBackground"
-      onClick={() => {
-        modalStatus(false);
-      }}
+      onClick={(event) =>
+        event.target.tagName === "DIV" ? setIsModalOpen(false) : null
+      }
     >
       <div>
         <Note
@@ -16,6 +16,7 @@ export let Modal = ({ information, modalStatus }) => {
           hour={information.hour}
           text={information.text}
           title={information.title}
+          isModalOpen={isModalOpen}
         />
       </div>
     </div>

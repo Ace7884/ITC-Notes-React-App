@@ -1,8 +1,8 @@
 .FormContainer {
   display: grid;
   justify-items: center;
-  height: 40vh;
-  width: 21.25vw;
+  height: max-content 40vh;
+  width: 23.25vw;
   grid-template-rows: 1fr 5vh;
   gap: 3vh;
   padding: 10px;

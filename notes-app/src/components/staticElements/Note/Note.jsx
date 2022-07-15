@@ -1,26 +1,36 @@
 import React from "react";
 import { WrapperBetween } from "../../layout/wrapperBetween/WrapperBetween";
+import { NoteTitle } from "../NoteTitle/NoteTitle";
+import { NoteText } from "../NoteText/NoteText";
 import "../Note/Note.css";
-import { ModalClickableArea } from "../../layout/ModalClickableArea/ModalClickableArea";
 
 export const Note = ({
-  text,
-  title,
   id,
-  deleteNote,
-  toggleModal,
   hour,
   date,
+  text,
+  title,
+  deleteNote,
+  isModalOpen,
+  toggleModal,
 }) => {
+  const noteController = (event) => {
+    if (!isModalOpen && event.target.tagName !== "svg") {
+      toggleModal(id);
+    }
+  };
+
   return (
-    <div className="Note">
-      <WrapperBetween deleteNote={deleteNote} hour={hour} date={date} id={id} />
-      <ModalClickableArea
-        text={text}
-        title={title}
+    <div className="Note" onClick={noteController}>
+      <WrapperBetween
+        deleteNote={deleteNote}
+        hour={hour}
+        date={date}
         id={id}
-        toggleModal={toggleModal}
+        isModalOpen={isModalOpen}
       />
+      <NoteTitle title={title} />
+      <NoteText text={text} />
     </div>
   );
 };

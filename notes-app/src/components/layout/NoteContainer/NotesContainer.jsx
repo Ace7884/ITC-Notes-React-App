@@ -2,10 +2,15 @@ import React from "react";
 import { Note } from "../../staticElements/Note/Note";
 import "../NoteContainer/NotesContainer.css";
 
-export const NotesContainer = ({ state, deleteNote, toggleModal }) => {
+export const NotesContainer = ({
+  noteList,
+  deleteNote,
+  isModalOpen,
+  toggleModal,
+}) => {
   return (
     <div className="NotesContainer">
-      {state.map((noteitem) => {
+      {noteList.map((noteitem) => {
         return (
           <Note
             key={noteitem.key}
@@ -14,6 +19,7 @@ export const NotesContainer = ({ state, deleteNote, toggleModal }) => {
             date={noteitem.date}
             text={noteitem.text}
             title={noteitem.title}
+            isModalOpen={isModalOpen}
             deleteNote={deleteNote}
             toggleModal={toggleModal}
           />

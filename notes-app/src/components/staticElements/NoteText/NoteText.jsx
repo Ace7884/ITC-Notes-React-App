@@ -5,7 +5,7 @@ import "../NoteText/NoteText.css";
 export const NoteText = ({ text }) => {
   return (
     <div className="NoteText">
-      <textarea disabled={true}>{text}</textarea>
+      <textarea value={text} disabled={true}></textarea>
     </div>
   );
 };

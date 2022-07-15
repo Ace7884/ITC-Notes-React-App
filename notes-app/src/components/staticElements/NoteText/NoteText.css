@@ -4,20 +4,29 @@
 .NoteText {
   display: flex;
   height: 100%;
-  
 }
 
-.NoteText  textarea{
+.NoteText textarea {
   color: rgb(224, 29, 29);
   font-family: "Caveat", cursive;
-  font-size:x-small;
+  font-size: larger;
   background-color: transparent;
   border: none;
   outline: none;
-  /* overflow:hidden;
-  caret-color: transparent; */
+  overflow: scroll;
   width: 97%;
   height: 94%;
-  margin:1px;
+  margin: 1px;
   resize: none;
+  overflow-x: hidden;
+}
+
+.NoteText textarea::-webkit-scrollbar {
+  position: absolute;
+  width: 10px;
+}
+
+.NoteText textarea::-webkit-scrollbar-thumb {
+  border-radius: var(--elementCurve);
+  background-color: rgb(255, 255, 255);
 }

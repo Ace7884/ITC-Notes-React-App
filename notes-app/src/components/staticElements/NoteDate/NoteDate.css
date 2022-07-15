@@ -6,9 +6,9 @@
   justify-content: space-between;
 }
 
-.NoteDate>span{
+.NoteDate > span {
   color: grey;
-  font-size: 10px;
+  font-size: x-small;
   font-family: "Caveat", cursive;
   font-weight: bold;
   padding: 0 2px;

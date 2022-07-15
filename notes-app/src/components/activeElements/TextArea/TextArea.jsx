@@ -1,5 +1,6 @@
 import React from "react";
 import "../TextArea/TextArea.css";
+import { extendTextArea } from "../../../App";
 
 export const TextArea = ({
   noteTitleState,
@@ -12,6 +13,7 @@ export const TextArea = ({
   };
   const updateNoteText = (event) => {
     setNoteText(event.target.value);
+    extendTextArea(event);
   };
 
   return (

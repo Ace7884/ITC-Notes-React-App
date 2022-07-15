@@ -4,21 +4,21 @@ import { TextArea } from "../../activeElements/TextArea/TextArea";
 import "../FormContainer/FormContainer.css";
 
 export const FormContainer = ({
-  func,
   noteTitleState,
   noteTextState,
-  setNoteTitleFunc,
-  setNoteTextFunc,
+  setTitle,
+  setNoteText,
+  addNote,
 }) => {
   return (
     <div className="FormContainer">
       <TextArea
         noteTitleState={noteTitleState}
         noteTextState={noteTextState}
-        setTitle={setNoteTitleFunc}
-        setNoteText={setNoteTextFunc}
+        setTitle={setTitle}
+        setNoteText={setNoteText}
       />
-      <Button func={func} noteTextState={noteTextState} text="Add Note" />
+      <Button addNote={addNote} noteTextState={noteTextState} text="Add Note" />
     </div>
   );
 };

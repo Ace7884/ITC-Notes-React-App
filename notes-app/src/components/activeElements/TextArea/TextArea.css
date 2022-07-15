@@ -1,4 +1,6 @@
 .TextArea {
+  display: flex;
+  flex-direction: column;
   width: 100%;
   border: black solid 1px;
   background-image: url("../../../resources/ScreenTexture.png");
@@ -7,23 +9,22 @@
   border-radius: var(--elementCurve);
 }
 
-.TextArea>textarea {
+.TextArea > textarea {
   display: flex;
-  height: 95%;
+  min-height: 20vh;
   width: 100%;
   background-color: transparent;
-  resize: none; 
-  overflow:hidden;
-
+  resize: none;
 }
 
 input {
+  font-size: medium;
   border: none;
   font-weight: bold;
   background-color: transparent;
 }
 
-.TextArea>textarea,
+.TextArea > textarea,
 input {
   color: #757575;
   border: none;
