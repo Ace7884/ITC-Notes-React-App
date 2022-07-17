@@ -2,10 +2,20 @@ import React from "react";
 import "../NoteTitle/NoteTitle.css";
 //Text OverFlow container Debug pending
 
-export const NoteTitle = ({ title }) => {
+export const NoteTitle = ({
+  title,
+  noteTitleState,
+  isModalOpen,
+  updateTitle,
+}) => {
   return (
     <div className="NoteTitle">
-      <h2>{title}</h2>
+      <input
+        value={noteTitleState}
+        onChange={updateTitle}
+        placeholder={title}
+        disabled={isModalOpen ? false : true}
+      ></input>
     </div>
   );
 };

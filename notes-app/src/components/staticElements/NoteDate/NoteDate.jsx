@@ -1,5 +1,5 @@
 import React from "react";
-import "../NoteDate/NoteDate.css";
+import "./NoteDate.css";
 
 export const NoteDate = ({ date, hour }) => {
   return (

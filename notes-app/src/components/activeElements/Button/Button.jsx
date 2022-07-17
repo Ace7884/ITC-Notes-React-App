@@ -1,12 +1,10 @@
 import React from "react";
 import "../Button/Button.css";
+import "../Button/NoteButton.css";
 
-export const Button = ({ text, addNote, noteTextState }) => {
+export const Button = ({ text, func, noteTextState }) => {
   return (
-    <button
-      onClick={noteTextState.length > 0 ? addNote : null}
-      className="Button"
-    >
+    <button onClick={noteTextState.length > 0 ? func : null} className="Button">
       {text}
     </button>
   );

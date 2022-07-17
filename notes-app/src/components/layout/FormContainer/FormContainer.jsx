@@ -6,8 +6,8 @@ import "../FormContainer/FormContainer.css";
 export const FormContainer = ({
   noteTitleState,
   noteTextState,
-  setTitle,
-  setNoteText,
+  updateTitle,
+  updateNoteText,
   addNote,
 }) => {
   return (
@@ -15,10 +15,10 @@ export const FormContainer = ({
       <TextArea
         noteTitleState={noteTitleState}
         noteTextState={noteTextState}
-        setTitle={setTitle}
-        setNoteText={setNoteText}
+        updateTitle={updateTitle}
+        updateNoteText={updateNoteText}
       />
-      <Button addNote={addNote} noteTextState={noteTextState} text="Add Note" />
+      <Button func={addNote} noteTextState={noteTextState} text="Add Note" />
     </div>
   );
 };

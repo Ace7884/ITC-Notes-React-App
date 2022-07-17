@@ -5,20 +5,23 @@ import "../NoteContainer/NotesContainer.css";
 export const NotesContainer = ({
   noteList,
   deleteNote,
-  isModalOpen,
   toggleModal,
+  isModalOpen,
 }) => {
   return (
     <div className="NotesContainer">
-      {noteList.map((noteitem) => {
+      {noteList.map((noteItem) => {
         return (
           <Note
-            key={noteitem.key}
-            id={noteitem.id}
-            hour={noteitem.hour}
-            date={noteitem.date}
-            text={noteitem.text}
-            title={noteitem.title}
+            key={noteItem.key}
+            id={noteItem.id}
+            hour={noteItem.hour}
+            newHour={noteItem.newHour}
+            date={noteItem.date}
+            newDate={noteItem.newDate}
+            text={noteItem.text}
+            title={noteItem.title}
+            isNoteUpdated={noteItem.isNoteUpdated}
             isModalOpen={isModalOpen}
             deleteNote={deleteNote}
             toggleModal={toggleModal}

@@ -2,8 +2,17 @@
 /* Debug later text overflow */
 
 .NoteTitle {
+  display: inline-flex;
+  width: 100%;
+}
+
+.NoteTitle > input,
+.NoteTitle > ::placeholder {
+  background-color: transparent;
+  width: 100%;
   color: rgb(224, 29, 29);
   font-family: "Caveat", cursive;
-  margin: 0 1px;
-  width: 100%;
+  font-size: larger;
+  font-weight: 600;
+  border: none;
 }

@@ -1,32 +1,47 @@
 import React from "react";
 import "../TextArea/TextArea.css";
-import { extendTextArea } from "../../../App";
+import "../../staticElements/Note/TextAreaNote.css";
+import "../../staticElements/Note/Note.css";
+import "../../staticElements/NoteTitle/NoteTitle.css";
+import "../../staticElements/NoteText/NoteText.css";
 
 export const TextArea = ({
   noteTitleState,
   noteTextState,
-  setTitle,
-  setNoteText,
-}) => {
-  const updateTitle = (event) => {
-    setTitle(event.target.value);
-  };
-  const updateNoteText = (event) => {
-    setNoteText(event.target.value);
-    extendTextArea(event);
-  };
+  updateTitle,
+  updateNoteText,
+  updatedNoteTitle,
+  updatedNoteText,
+  updateNewTitle,
+  updateNewNoteText,
 
+  title,
+  text,
+  isModalOpen,
+}) => {
   return (
-    <div className="TextArea">
+    <div className={isModalOpen ? "TextAreaNote" : "TextArea"}>
       <input
-        value={noteTitleState}
-        onChange={updateTitle}
-        placeholder="Your Title here..."
+        className={isModalOpen ? "NoteTitle" : null}
+        // toggle attributes pending state
+        {...(isModalOpen
+          ? { value: updatedNoteTitle }
+          : { value: noteTitleState })}
+        {...(isModalOpen
+          ? { onChange: updateNewTitle }
+          : { onChange: updateTitle })}
+        placeholder={isModalOpen && title ? title : ""}
       ></input>
       <textarea
-        value={noteTextState}
-        onChange={updateNoteText}
-        placeholder="Your Note Here..."
+        className={isModalOpen ? "NoteText" : null}
+        // toggle attributes pending state
+        {...(isModalOpen
+          ? { value: updatedNoteText }
+          : { value: noteTextState })}
+        {...(isModalOpen
+          ? { onChange: updateNewNoteText }
+          : { onChange: updateNoteText })}
+        placeholder={isModalOpen ? text : ""}
       ></textarea>
     </div>
   );

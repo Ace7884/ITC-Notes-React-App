@@ -1,32 +1,30 @@
 @import url("https://fonts.googleapis.com/css2?family=Caveat&display=swap");
-/* Debug later text overflow */
 
 .NoteText {
   display: flex;
   height: 100%;
 }
 
-.NoteText textarea {
+.NoteText > textarea {
   color: rgb(224, 29, 29);
-  font-family: "Caveat", cursive;
-  font-size: larger;
   background-color: transparent;
+  font-family: "Caveat", cursive;
+  font-size: medium;
   border: none;
   outline: none;
   overflow: scroll;
-  width: 97%;
-  height: 94%;
-  margin: 1px;
+  width: 98%;
+  height: 98%;
   resize: none;
   overflow-x: hidden;
 }
 
-.NoteText textarea::-webkit-scrollbar {
+.NoteText > textarea::-webkit-scrollbar {
   position: absolute;
   width: 10px;
 }
 
-.NoteText textarea::-webkit-scrollbar-thumb {
+.NoteText > textarea::-webkit-scrollbar-thumb {
   border-radius: var(--elementCurve);
   background-color: rgb(255, 255, 255);
 }

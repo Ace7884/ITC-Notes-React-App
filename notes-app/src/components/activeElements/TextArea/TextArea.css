@@ -17,7 +17,7 @@
   resize: none;
 }
 
-input {
+.TextArea > input {
   font-size: medium;
   border: none;
   font-weight: bold;
@@ -25,7 +25,7 @@ input {
 }
 
 .TextArea > textarea,
-input {
+.TextArea > input {
   color: #757575;
   border: none;
   margin: 0 1px;
@@ -33,7 +33,7 @@ input {
   outline: none;
 }
 
-textarea:hover,
-input:hover {
-  cursor: pointer;
+.TextArea textarea:hover,
+.TextArea input:hover {
+  cursor: text;
 }

@@ -3,6 +3,7 @@
 .NoteDate {
   width: 100%;
   display: inline-flex;
+  align-self: center;
   justify-content: space-between;
 }
 
@@ -11,5 +12,5 @@
   font-size: x-small;
   font-family: "Caveat", cursive;
   font-weight: bold;
-  padding: 0 2px;
+  padding: 0 1px;
 }
