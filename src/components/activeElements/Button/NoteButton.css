@@ -1,0 +1,5 @@
+.NoteButton {
+  display: inline-flex;
+  justify-self: center;
+  background-color: wheat;
+}

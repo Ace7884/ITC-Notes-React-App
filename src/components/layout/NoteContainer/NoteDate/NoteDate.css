@@ -1,0 +1,15 @@
+@import url("https://fonts.googleapis.com/css2?family=Caveat&display=swap");
+
+.NoteDate {
+  width: 100%;
+  display: inline-flex;
+  justify-content: space-between;
+}
+
+.NoteDate>span{
+  color: grey;
+  font-size: 10px;
+  font-family: "Caveat", cursive;
+  font-weight: bold;
+  padding: 0 2px;
+}

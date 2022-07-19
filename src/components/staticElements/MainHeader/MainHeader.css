@@ -1,0 +1,5 @@
+.title {
+  display: inline-flex;
+  color: whitesmoke;
+  text-shadow: 0px 4px 2px rgb(44, 42, 42, 0.5);
+}

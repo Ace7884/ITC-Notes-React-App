@@ -1,0 +1,18 @@
+@import url("https://fonts.googleapis.com/css2?family=Caveat&display=swap");
+/* Debug later text overflow */
+
+.NoteTitle {
+  display: inline-flex;
+  width: 100%;
+}
+
+.NoteTitle > input,
+.NoteTitle > ::placeholder {
+  background-color: transparent;
+  width: 100%;
+  color: rgb(224, 29, 29);
+  font-family: "Caveat", cursive;
+  font-size: larger;
+  font-weight: 600;
+  border: none;
+}

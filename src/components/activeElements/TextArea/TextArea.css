@@ -1,0 +1,39 @@
+.TextArea {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border: black solid 1px;
+  background-image: url("../../../resources/ScreenTexture.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: var(--elementCurve);
+}
+
+.TextArea > textarea {
+  display: flex;
+  min-height: 20vh;
+  width: 100%;
+  background-color: transparent;
+  resize: none;
+}
+
+.TextArea > input {
+  font-size: medium;
+  border: none;
+  font-weight: bold;
+  background-color: transparent;
+}
+
+.TextArea > textarea,
+.TextArea > input {
+  color: #757575;
+  border: none;
+  margin: 0 1px;
+  width: 95%;
+  outline: none;
+}
+
+.TextArea textarea:hover,
+.TextArea input:hover {
+  cursor: text;
+}

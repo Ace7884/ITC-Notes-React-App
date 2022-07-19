@@ -1,0 +1,30 @@
+@import url("https://fonts.googleapis.com/css2?family=Caveat&display=swap");
+
+.NoteText {
+  display: flex;
+  height: 100%;
+}
+
+.NoteText > textarea {
+  color: rgb(224, 29, 29);
+  background-color: transparent;
+  font-family: "Caveat", cursive;
+  font-size: medium;
+  border: none;
+  outline: none;
+  overflow: scroll;
+  width: 98%;
+  height: 98%;
+  resize: none;
+  overflow-x: hidden;
+}
+
+.NoteText > textarea::-webkit-scrollbar {
+  position: absolute;
+  width: 10px;
+}
+
+.NoteText > textarea::-webkit-scrollbar-thumb {
+  border-radius: var(--elementCurve);
+  background-color: rgb(255, 255, 255);
+}

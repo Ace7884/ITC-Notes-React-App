@@ -1,0 +1,31 @@
+.Note {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+  height: 30vh;
+  width: 17vw;
+  padding: 5px;
+  background-image: url(../../../resources/PostItTexture.jpg);
+  box-shadow: var(--elementShadow);
+  border-radius: var(--elementCurve);
+}
+
+.Note > button {
+  color: rgb(22, 15, 15);
+  font-size: small;
+  font: bolder;
+  background-color: white;
+  align-self: center;
+  width: fit-content;
+  border: none;
+  border-radius: var(--elementCurve);
+  box-shadow: var(--elementShadow);
+}
+
+.Note > button:hover {
+  cursor: pointer;
+  transition: all 300ms ease-in;
+  color: white;
+  background-color: grey;
+  box-shadow: inset 0px 1px 5px rgb(25, 25, 25);
+}
