@@ -30,7 +30,7 @@ export const TextArea = ({
         {...(isModalOpen
           ? { onChange: updateNewTitle }
           : { onChange: updateTitle })}
-        placeholder={isModalOpen && title ? title : ""}
+        placeholder={isModalOpen && title ? title : "Your title here..."}
       ></input>
       <textarea
         className={isModalOpen ? "NoteText" : null}
@@ -41,7 +41,7 @@ export const TextArea = ({
         {...(isModalOpen
           ? { onChange: updateNewNoteText }
           : { onChange: updateNoteText })}
-        placeholder={isModalOpen ? text : ""}
+        placeholder={isModalOpen ? text : "Your title here..."}
       ></textarea>
     </div>
   );

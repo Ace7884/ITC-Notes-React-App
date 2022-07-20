@@ -1,5 +1,7 @@
 import React from "react";
 import { useState } from "react";
+import { useEffect } from "react";
+import localforage from "localforage";
 import { MainHeader } from "./components/staticElements/MainHeader/MainHeader";
 import { FormContainer } from "./components/layout/FormContainer/FormContainer";
 import { NotesContainer } from "./components/layout/NoteContainer/NotesContainer";
@@ -10,10 +12,23 @@ import "./App.css";
 export const App = () => {
   const [noteList, setNotes] = useState([]);
 
+  useEffect(() => {
+    const getNotes = async () => {
+      let storedNotes = await localforage.getItem("NoteStorage");
+      if (storedNotes) {
+        setNotes(storedNotes);
+      } else {
+        setNotes([]);
+      }
+    };
+    getNotes();
+  }, []);
+
   const deleteNote = (id) => {
     if (window.confirm("Are you sure you want to delete your note?")) {
       let removeNotesList = noteList.filter((note) => note.id !== id);
       setNotes(removeNotesList);
+      removeStoredNotes(id);
     }
   };
 
@@ -45,9 +60,22 @@ export const App = () => {
       text: noteText,
     };
     let newNoteList = noteList.concat(newNote);
+    localforage.setItem("NoteStorage", newNoteList);
     setNotes(newNoteList);
     setTitle("");
     setNoteText("");
+  };
+
+  const removeStoredNotes = (id) => {
+    localforage.iterate((value) => {
+      for (const key in value) {
+        if (id === value[key].id) {
+          value.splice(key, 1);
+          localforage.removeItem("NoteStorage");
+          return localforage.setItem("NoteStorage", value);
+        }
+      }
+    });
   };
 
   const [updatedNoteTitle, setUpdatedNoteTitle] = useState("");
@@ -63,13 +91,14 @@ export const App = () => {
   const updateNote = (id) => {
     let newDate = new Date();
     let newHour = newDate.toLocaleTimeString("en-Us");
-    newDate = `Modified ${newDate.toDateString()}`;
     let updatedNote = noteList.filter((note) => note.id === id);
+    newDate = `Modified ${newDate.toDateString()}`;
     updatedNote[0].isNoteUpdated = true;
     updatedNote[0].title = updatedNoteTitle;
     updatedNote[0].text = updatedNoteText;
     updatedNote[0].newDate = newDate;
     updatedNote[0].newHour = newHour;
+    localforage.setItem("NoteStorage", noteList);
     setIsModalOpen(false);
     setUpdatedNoteText("");
     setUpdatedNoteTitle("");
@@ -99,7 +128,6 @@ export const App = () => {
         deleteNote={deleteNote}
         toggleModal={toggleModal}
         isModalOpen={isModalOpen}
-        ssss
       />
       {isModalOpen && (
         <Modal
