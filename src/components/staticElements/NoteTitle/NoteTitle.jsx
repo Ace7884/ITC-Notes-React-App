@@ -1,6 +1,5 @@
 import React from "react";
 import "../NoteTitle/NoteTitle.css";
-//Text OverFlow container Debug pending
 
 export const NoteTitle = ({
   title,
