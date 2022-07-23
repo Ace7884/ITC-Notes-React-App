@@ -1,5 +1,5 @@
 import React from "react";
-import { Note } from "../../staticElements/Note/Note";
+import { Note } from "components";
 import "../NoteContainer/NotesContainer.css";
 
 export const NotesContainer = ({

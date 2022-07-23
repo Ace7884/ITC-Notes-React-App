@@ -2,10 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { useEffect } from "react";
 import localforage from "localforage";
-import { MainHeader } from "./components/staticElements/MainHeader/MainHeader";
-import { FormContainer } from "./components/layout/FormContainer/FormContainer";
-import { NotesContainer } from "./components/layout/NoteContainer/NotesContainer";
-import { Modal } from "./components/activeElements/Modal/Modal";
+import { MainHeader, NotesContainer,FormContainer,Modal } from "components";
 import { v4 as uuid } from "uuid";
 import "./App.css";
 

@@ -1,6 +1,5 @@
 import React from "react";
-import { Note } from "../../staticElements/Note/Note";
-import { TextArea } from "../TextArea/TextArea";
+import { Note,TextArea } from "components";
 import "./Modal.css";
 
 export let Modal = ({

@@ -1,7 +1,7 @@
 import React from "react";
+import { NoteDate,DeleteIcon } from "components";
 import "../wrapperBetween/wrapperBetween.css";
-import { NoteDate } from "../../staticElements/NoteDate/NoteDate";
-import { DeleteIcon } from "../../activeElements/DeleteIcon/DeleteIcon";
+
 
 export const WrapperBetween = ({
   deleteNote,

@@ -1,8 +1,5 @@
 import React from "react";
-import { WrapperBetween } from "../../layout/wrapperBetween/WrapperBetween";
-import { NoteTitle } from "../NoteTitle/NoteTitle";
-import { NoteText } from "../NoteText/NoteText";
-import { NoteDate } from "../NoteDate/NoteDate";
+import { WrapperBetween,NoteTitle,NoteText,NoteDate } from "components";
 import "../Note/Note.css";
 
 export const Note = ({

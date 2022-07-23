@@ -1,6 +1,5 @@
 import React from "react";
-import { Button } from "../../activeElements/Button/Button";
-import { TextArea } from "../../activeElements/TextArea/TextArea";
+import { Button,TextArea } from "components";
 import "../FormContainer/FormContainer.css";
 
 export const FormContainer = ({
